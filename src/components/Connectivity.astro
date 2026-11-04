@@ -1,0 +1,52 @@
+---
+const connectivityItems = [
+  { destination: "Kanpur–Lucknow Road", time: "2 Min", icon: "road" },
+  { destination: "Outer Ring Road (Kisan Path)", time: "5 Min", icon: "highway" },
+  { destination: "Sports Authority of India", time: "7 Min", icon: "sports" },
+  { destination: "UP Sainik School", time: "8 Min", icon: "school" },
+  { destination: "Shaheed Path", time: "10 Min", icon: "expressway" },
+  { destination: "Amausi Metro Station", time: "15 Min", icon: "metro" },
+  { destination: "Lucknow International Airport", time: "15 Min", icon: "airport" },
+  { destination: "Medanta Hospital", time: "18 Min", icon: "hospital" },
+  { destination: "Charbagh Railway Station", time: "20 Min", icon: "train" },
+  { destination: "Phoenix Palassio Mall", time: "20 Min", icon: "mall" },
+];
+---
+
+<section class="py-16 sm:py-24 bg-[#141414] text-white" id="connectivity">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Head -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-2 text-xs uppercase font-bold tracking-[0.25em] text-[#ff4d61] mb-3">
+        Connectivity Highlights
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mb-4">
+        Prime Location & Excellent Connectivity
+      </h2>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        Hero Homes Lucknow enjoys a strategic location on the Kanpur–Lucknow Road, offering seamless connectivity to major highways, business hubs, educational institutions, hospitals, shopping destinations, and transportation facilities.
+      </p>
+    </div>
+
+    <!-- Connectivity Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+      {connectivityItems.map((item) => (
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#c81429] p-5 rounded-lg text-center transition-all duration-200 group">
+          <div class="w-12 h-12 rounded-full bg-[#c81429]/20 text-[#ff4d61] mx-auto flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-[#c81429] group-hover:text-white transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="text-xl sm:text-2xl font-bold font-serif text-[#c81429] mb-1">
+            {item.time}
+          </div>
+          <div class="text-xs sm:text-sm text-gray-200 font-medium">
+            {item.destination}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

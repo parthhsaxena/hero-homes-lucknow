@@ -1,0 +1,119 @@
+---
+---
+
+<header id="siteHeader" class="sticky top-0 z-40 bg-[#141414] text-white shadow-md transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo / Wordmark -->
+      <a href="#home" class="flex flex-col group">
+        <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-white group-hover:text-[#c81429] transition-colors">
+          Hero Homes Lucknow
+        </span>
+        <span class="text-[10px] uppercase tracking-[0.35em] text-white/60">
+          Kanpur–Lucknow Road • Pre-Launch
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium tracking-wide uppercase">
+        <a href="#overview" class="hover:text-[#c81429] transition-colors py-2">About</a>
+        <a href="#amenities" class="hover:text-[#c81429] transition-colors py-2">Amenities</a>
+        <a href="#price" class="hover:text-[#c81429] transition-colors py-2">Price</a>
+        <a href="#gallery" class="hover:text-[#c81429] transition-colors py-2">Gallery</a>
+        <a href="#location" class="hover:text-[#c81429] transition-colors py-2">Location</a>
+        <a href="#contact" class="hover:text-[#c81429] transition-colors py-2">Contact</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <button 
+          type="button"
+          data-open-modal
+          data-intent="Enquire Now - Header"
+          class="bg-[#c81429] hover:bg-[#a50e20] text-white text-xs uppercase font-bold tracking-wider px-5 py-3 rounded transition-all shadow-sm active:scale-95"
+        >
+          Enquire Now
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button 
+          type="button" 
+          data-open-modal
+          data-intent="Enquire Now - Header Mobile"
+          class="bg-[#c81429] text-white text-[11px] uppercase font-bold tracking-wider px-3 py-2 rounded"
+        >
+          Enquire
+        </button>
+
+        <button 
+          id="mobileMenuBtn"
+          type="button" 
+          class="p-2 text-gray-300 hover:text-white focus:outline-none"
+          aria-label="Toggle navigation menu"
+        >
+          <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-[#1a1a1a] border-t border-white/10 px-4 pt-3 pb-6 space-y-3">
+    <a href="#overview" class="mobile-nav-link block py-2 text-sm font-medium uppercase tracking-wider text-white/90 hover:text-[#c81429]">About</a>
+    <a href="#amenities" class="mobile-nav-link block py-2 text-sm font-medium uppercase tracking-wider text-white/90 hover:text-[#c81429]">Amenities</a>
+    <a href="#price" class="mobile-nav-link block py-2 text-sm font-medium uppercase tracking-wider text-white/90 hover:text-[#c81429]">Price</a>
+    <a href="#gallery" class="mobile-nav-link block py-2 text-sm font-medium uppercase tracking-wider text-white/90 hover:text-[#c81429]">Gallery</a>
+    <a href="#location" class="mobile-nav-link block py-2 text-sm font-medium uppercase tracking-wider text-white/90 hover:text-[#c81429]">Location</a>
+    <a href="#contact" class="mobile-nav-link block py-2 text-sm font-medium uppercase tracking-wider text-white/90 hover:text-[#c81429]">Contact</a>
+    <div class="pt-2 border-t border-white/10">
+      <button 
+        type="button"
+        data-open-modal
+        data-intent="Enquire Now - Mobile Drawer"
+        class="w-full bg-[#c81429] text-white text-xs uppercase font-bold py-3 rounded text-center"
+      >
+        Enquire Now
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const closeIcon = document.getElementById('closeIcon');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = !mobileMenu.classList.contains('hidden');
+      if (isExpanded) {
+        mobileMenu.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuIcon?.classList.add('hidden');
+        closeIcon?.classList.remove('hidden');
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      });
+    });
+  }
+</script>

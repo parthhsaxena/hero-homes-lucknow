@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileStickyBar from '../components/MobileStickyBar.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { siteConfig } from '../config/site';
+---
+
+<Layout 
+  title="Privacy Policy | Hero Homes Lucknow"
+  description="Privacy Policy and data protection terms for Hero Homes Lucknow enquiry website."
+>
+  <Header />
+
+  <main class="py-16 sm:py-24 bg-white text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="border-b border-gray-200 pb-8 mb-8">
+        <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#141414] mb-3">
+          Privacy Policy
+        </h1>
+        <p class="text-sm text-gray-500">
+          Last updated: January 2026
+        </p>
+      </div>
+
+      <div class="space-y-6 text-sm sm:text-base leading-relaxed text-gray-700">
+        <p>
+          Welcome to the authorized marketing platform for <strong>Hero Homes Lucknow</strong>. We are committed to safeguarding your personal data and ensuring that your privacy is protected. This Privacy Policy outlines how we collect, use, and handle your information when you browse our site, request brochures, or submit an enquiry form.
+        </p>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">1. Information We Collect</h2>
+        <p>
+          When you fill out any lead or contact form on this website or initiate a conversation via WhatsApp or phone call, we may collect:
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Full Name</li>
+          <li>Phone Number and WhatsApp contact</li>
+          <li>Email address</li>
+          <li>Specific property configuration interest (e.g., plot size preference)</li>
+          <li>Technical data such as referral URL, device type, and UTM marketing campaign parameters</li>
+        </ul>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">2. Purpose of Collection</h2>
+        <p>
+          We use this data solely to:
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Deliver requested project brochures, price lists, and payment schemes</li>
+          <li>Arrange complimentary site visits and route directions</li>
+          <li>Connect you with authorized property consultants via Call, SMS, WhatsApp, or Email</li>
+          <li>Provide periodic updates on project milestones and exclusive booking benefits</li>
+        </ul>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">3. Data Protection & Sharing</h2>
+        <p>
+          We respect your privacy and do not sell, rent, or trade your personally identifiable information to unrelated third-party marketers. Your details are strictly shared with authorized sales personnel handling the marketing for Hero Homes Lucknow.
+        </p>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">4. Consent & Opt-Out</h2>
+        <p>
+          By checking our consent box and submitting your contact details, you authorize our sales desk to reach out to you regardless of your DND (Do Not Disturb) registry status. If you wish to unsubscribe or revoke communication permissions, you may simply reply "STOP" on WhatsApp or notify us via email.
+        </p>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">5. Disclaimer</h2>
+        <p>
+          This website is managed by an authorized marketing partner and is intended for informational and lead facilitation purposes. For verified legal registrations, please refer directly to the Uttar Pradesh Real Estate Regulatory Authority (UP RERA).
+        </p>
+
+        <div class="pt-8 border-t border-gray-200">
+          <a href="/" class="text-[#c81429] font-bold hover:underline flex items-center gap-2 text-sm uppercase tracking-wider">
+            ← Return to Homepage
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+  <MobileStickyBar />
+  <FloatingWhatsApp />
+</Layout>

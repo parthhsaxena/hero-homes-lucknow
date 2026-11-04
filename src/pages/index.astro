@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Overview from '../components/Overview.astro';
+import Connectivity from '../components/Connectivity.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import Amenities from '../components/Amenities.astro';
+import PricePlan from '../components/PricePlan.astro';
+import Gallery from '../components/Gallery.astro';
+import Walkthrough from '../components/Walkthrough.astro';
+import LocationAdvantage from '../components/LocationAdvantage.astro';
+import AboutDeveloper from '../components/AboutDeveloper.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+import EnquiryModal from '../components/EnquiryModal.astro';
+import MobileStickyBar from '../components/MobileStickyBar.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { siteConfig } from '../config/site';
+---
+
+<Layout 
+  title="Hero Homes Lucknow | Premium Residential Plots & Villas Kanpur Road"
+  description={siteConfig.seoDescription}
+>
+  <!-- Global Navigation Header -->
+  <Header />
+
+  <!-- Main Funnel Flow -->
+  <main>
+    <Hero />
+    <Overview />
+    <Connectivity />
+    <CtaStrip />
+    <Amenities />
+    <PricePlan />
+    <Gallery />
+    <Walkthrough />
+    <LocationAdvantage />
+    <AboutDeveloper />
+    <ContactSection />
+  </main>
+
+  <!-- Global Footer & Compliance -->
+  <Footer />
+
+  <!-- Conversion Elements & Popups -->
+  <EnquiryModal />
+  <MobileStickyBar />
+  <FloatingWhatsApp />
+</Layout>
+
+<script>
+  import { initFormHandlers } from '../scripts/form-handler';
+
+  // Initialize form handlers when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFormHandlers);
+  } else {
+    initFormHandlers();
+  }
+</script>

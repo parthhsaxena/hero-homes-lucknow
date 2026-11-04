@@ -1,0 +1,132 @@
+---
+const priceItems = [
+  {
+    type: "Residential Home",
+    size: "On Request",
+    price: "On Request",
+    action: "Get Best Price →",
+    badge: "Most Popular",
+  },
+  {
+    type: "Corner Home",
+    size: "On Request",
+    price: "On Request",
+    action: "Get Best Price →",
+    badge: "Limited Inventory",
+  },
+  {
+    type: "Premium Home",
+    size: "On Request",
+    price: "On Request",
+    action: "Get Best Price →",
+    badge: "Exclusive Plots",
+  },
+];
+---
+
+<section class="py-16 sm:py-24 bg-white" id="price">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Head -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="eyebrow-badge">Price Plan</div>
+      <h2 class="text-2xl sm:text-4xl font-serif font-bold text-[#141414] mb-4">
+        Hero Homes Lucknow Price Plan
+      </h2>
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+        Explore premium residential plots at Hero Homes Lucknow . For the latest price list, payment plan, exclusive offers, and complete cost sheet, get in touch with our sales team.
+      </p>
+    </div>
+
+    <!-- Grid: Table on left, Cost Sheet Card on right -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Table Column -->
+      <div class="lg:col-span-8 overflow-hidden rounded-lg border border-[#e5e5e0] shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-[#141414] text-white text-xs uppercase tracking-wider">
+                <th class="py-4 px-5 font-semibold">Configuration</th>
+                <th class="py-4 px-5 font-semibold">Plot Size</th>
+                <th class="py-4 px-5 font-semibold">Starting Price</th>
+                <th class="py-4 px-5 font-semibold text-right">Details</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#e5e5e0] text-sm">
+              {priceItems.map((item) => (
+                <tr class="hover:bg-[#F5F5F4] transition-colors">
+                  <td class="py-5 px-5 font-medium text-[#141414]">
+                    <div class="flex items-center gap-2">
+                      <span class="font-serif font-bold">{item.type}</span>
+                      <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#c81429]/10 text-[#c81429]">
+                        {item.badge}
+                      </span>
+                    </div>
+                  </td>
+                  <td class="py-5 px-5 text-gray-600 font-medium">
+                    {item.size}
+                  </td>
+                  <td class="py-5 px-5 text-[#c81429] font-bold">
+                    {item.price}
+                  </td>
+                  <td class="py-5 px-5 text-right">
+                    <button 
+                      type="button"
+                      data-open-modal
+                      data-intent={`Price Enquiry - ${item.type}`}
+                      class="text-xs uppercase font-bold text-[#c81429] hover:text-[#a50e20] hover:underline"
+                    >
+                      {item.action}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-[#F5F5F4] p-4 text-xs text-gray-500 border-t border-[#e5e5e0]">
+          * Prices, payment plans and developmental charges are subject to official launch terms and revision.
+        </div>
+      </div>
+
+      <!-- Cost Sheet Download Card -->
+      <div class="lg:col-span-4 bg-[#F5F5F4] p-6 rounded-lg border border-[#e5e5e0] text-center flex flex-col justify-between h-full">
+        <div>
+          <div class="relative overflow-hidden rounded mb-5 border border-[#dedad2] shadow-sm">
+            <img 
+              src="/images/cost-sheet-preview.jpg" 
+              alt="Hero Homes Lucknow price list preview"
+              class="w-full h-44 object-cover filter blur-[1px] hover:blur-none transition-all duration-300"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <span class="bg-[#c81429] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded shadow">
+                Confidential Sheet
+              </span>
+            </div>
+          </div>
+
+          <h3 class="font-serif font-bold text-lg text-[#141414] mb-2">
+            Download Complete Cost Sheet
+          </h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-6">
+            Get the latest price list, payment plan, plot availability, and complete cost breakup of Hero Homes Lucknow.
+          </p>
+        </div>
+
+        <button 
+          type="button"
+          data-open-modal
+          data-intent="Download Cost Sheet"
+          class="w-full bg-[#c81429] hover:bg-[#a50e20] text-white text-xs font-bold uppercase tracking-wider py-3.5 rounded transition-all active:scale-95 shadow-sm"
+        >
+          Download Cost Sheet
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>

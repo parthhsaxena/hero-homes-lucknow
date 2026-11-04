@@ -1,0 +1,58 @@
+---
+const amenitiesList = [
+  { name: "Swimming Pool", desc: "Temperature-controlled swimming pool with dedicated kids splash area." },
+  { name: "Clubhouse", desc: "Ultra-luxury modern clubhouse for social gatherings and leisure." },
+  { name: "Gymnasium", desc: "Fully equipped fitness studio with cardio and weight training machines." },
+  { name: "Tennis Court", desc: "Professional size synthetic turf court for avid sports enthusiasts." },
+  { name: "Basketball Court", desc: "Standard half-court with shock-absorbent flooring." },
+  { name: "Kids Play Area", desc: "Safe, rubberized outdoor playground with modern play structures." },
+  { name: "Mini Home Theatre", desc: "Private screening hall with acoustic surround sound system." },
+  { name: "Cafe & Lounge", desc: "Elegant resident coffee shop and socializing lounge." },
+  { name: "Salon & Spa", desc: "Wellness grooming zone and relaxation spa facilities." },
+  { name: "Yoga & Meditation", desc: "Serene open-air wooden deck surrounded by tranquil greens." },
+  { name: "Jogging Track", desc: "Dedicated paved track passing through landscaped avenues." },
+  { name: "Indoor Games Room", desc: "Table tennis, billiards, chess, carrom, and board games." },
+  { name: "Landscaped Gardens", desc: "Themed floral gardens with lush seating alcoves." },
+  { name: "Multi-Purpose Hall", desc: "Spacious banquet hall for private community celebrations." },
+  { name: "24×7 Security", desc: "Multi-tier security gatehouse with round-the-clock CCTV cameras." },
+  { name: "Wide Internal Roads", desc: "Concrete wide avenues with LED street lights and underground cabling." },
+];
+---
+
+<section class="py-16 sm:py-24 bg-[#F5F5F4]" id="amenities">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Head -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="eyebrow-badge">Amenities</div>
+      <h2 class="text-2xl sm:text-4xl font-serif font-bold text-[#141414] mb-4">
+        Premium Lifestyle Amenities
+      </h2>
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+        Thoughtfully designed lifestyle amenities that provide comfort, recreation, fitness, and security for residents — a modern township with world-class facilities and lush green surroundings.
+      </p>
+    </div>
+
+    <!-- Amenities Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      {amenitiesList.map((item) => (
+        <div class="bg-white p-6 rounded-lg border border-[#e5e5e0] hover:border-[#c81429] hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-full bg-[#c81429]/10 text-[#c81429] flex items-center justify-center mb-4 group-hover:bg-[#c81429] group-hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="font-serif font-bold text-base sm:text-lg text-[#141414] mb-2 group-hover:text-[#c81429] transition-colors">
+              {item.name}
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

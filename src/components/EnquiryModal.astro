@@ -1,0 +1,133 @@
+---
+---
+
+<div id="enquiryModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true">
+  <div class="relative w-full max-w-md bg-[#1f1f1c] text-white rounded-xl shadow-2xl border border-white/20 overflow-hidden animate-modal-enter">
+    
+    <!-- Modal Header -->
+    <div class="bg-[#141414] px-6 py-4 flex items-center justify-between border-b border-white/10">
+      <div>
+        <div class="inline-block bg-[#c81429] text-white text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded mb-1">
+          Pre-Launch Access
+        </div>
+        <h3 id="modalTitle" class="font-serif font-bold text-lg text-white">
+          Register Pre-Launch Enquiry
+        </h3>
+        <p class="text-xs text-gray-400">
+          Be the first to receive pricing, payment plans & early bird benefits
+        </p>
+      </div>
+      
+      <button 
+        type="button" 
+        id="closeModalBtn" 
+        class="text-gray-400 hover:text-white p-1 rounded-lg focus:outline-none transition-colors"
+        aria-label="Close popup"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Form -->
+    <div class="p-6">
+      <form class="crm-enquiry-form space-y-4">
+        <input type="hidden" name="form_type" id="modalFormType" value="popup_enquiry" />
+        <input type="hidden" name="lead_intent" id="modalLeadIntent" value="Pre-Launch Priority Registration" />
+        <input type="hidden" name="source_url" value="" class="source-url-field" />
+        
+        <!-- Anti-spam Honeypot -->
+        <input type="text" name="website_honeypot" style="display:none;" tabindex="-1" autocomplete="off" />
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-gray-400 mb-1.5 font-semibold">Your Name *</label>
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Enter your name" 
+            required 
+            class="w-full bg-white/10 text-white placeholder-white/40 text-sm px-4 py-3.5 rounded border border-white/20 focus:outline-none focus:border-[#c81429] transition-colors"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-gray-400 mb-1.5 font-semibold">Mobile Number *</label>
+          <input 
+            type="tel" 
+            name="phone" 
+            placeholder="Enter 10-digit mobile number" 
+            required 
+            pattern="[0-9]{10}"
+            title="Please enter a valid 10-digit mobile number"
+            class="w-full bg-white/10 text-white placeholder-white/40 text-sm px-4 py-3.5 rounded border border-white/20 focus:outline-none focus:border-[#c81429] transition-colors"
+          />
+        </div>
+
+        <!-- Non-clickable small disclaimer -->
+        <p class="text-[11px] text-gray-400 leading-relaxed pt-1">
+          * By submitting this form, you authorize our representative to contact you with project information, pre-launch offers, and site visit scheduling.
+        </p>
+
+        <button 
+          type="submit" 
+          id="modalSubmitBtn"
+          class="w-full bg-[#c81429] hover:bg-[#a50e20] text-white font-bold text-xs uppercase tracking-widest py-4 rounded shadow-lg transition-all active:scale-[0.99] flex items-center justify-center gap-2"
+        >
+          <span id="modalSubmitText">Register Enquiry</span>
+        </button>
+
+        <div class="form-status text-center text-xs font-medium py-1" role="status"></div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const enquiryModal = document.getElementById('enquiryModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const modalLeadIntent = document.getElementById('modalLeadIntent') as HTMLInputElement | null;
+
+  function openModal(intentText = "Pre-Launch Priority Registration") {
+    if (!enquiryModal) return;
+    enquiryModal.classList.remove('hidden');
+    if (modalLeadIntent) {
+      modalLeadIntent.value = intentText;
+    }
+  }
+
+  function closeModal() {
+    enquiryModal?.classList.add('hidden');
+  }
+
+  // Make the form open first when the user opens the website
+  window.addEventListener('DOMContentLoaded', () => {
+    // Show popup shortly after page loads
+    setTimeout(() => {
+      openModal("Initial Page Open - Pre-Launch Registration");
+    }, 400);
+  });
+
+  // Manual triggers from buttons
+  document.querySelectorAll('[data-open-modal]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      const intent = (e.currentTarget as HTMLElement).getAttribute('data-intent') || 'Pre-Launch Registration';
+      openModal(intent);
+    });
+  });
+
+  closeModalBtn?.addEventListener('click', closeModal);
+
+  enquiryModal?.addEventListener('click', (e) => {
+    if (e.target === enquiryModal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && enquiryModal && !enquiryModal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+</script>

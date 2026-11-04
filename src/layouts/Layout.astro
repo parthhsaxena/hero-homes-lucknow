@@ -1,0 +1,178 @@
+---
+import { siteConfig } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Hero Homes Lucknow | Premium Residential Plots & Villas Kanpur Road",
+  description = siteConfig.seoDescription,
+  canonical = siteConfig.siteUrl,
+} = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateListing",
+      "@id": `${siteConfig.siteUrl}/#listing`,
+      "name": "Hero Homes Lucknow",
+      "description": description,
+      "url": siteConfig.siteUrl,
+      "category": "Residential Plots",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "price": "On Request",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "26.7587",
+        "longitude": "80.8845"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kanpur–Lucknow Road",
+        "addressLocality": "Lucknow",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "226008",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "RealEstateAgent",
+      "@id": `${siteConfig.siteUrl}/#agency`,
+      "name": "Hero Homes Lucknow Authorized Marketing Partner",
+      "url": siteConfig.siteUrl,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lucknow",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.siteUrl}/#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Hero Homes Lucknow located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hero Homes Lucknow is strategically located on the prime Kanpur–Lucknow Road in Lucknow, just 2 minutes from the highway and 10 minutes from Shaheed Path."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is the developer of Hero Homes Lucknow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The project is developed by Hero Realty, one of India's most trusted real estate developers backed by the prestigious Hero Group."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What plot configurations are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The township offers Residential Plots, Corner Plots, and Premium Villa Plots with attractive payment plans and complete infrastructure."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <link rel="shortcut icon" href="/favicon.ico?v=2" />
+    <link rel="apple-touch-icon" href="/favicon-192.png?v=2" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Hero Homes Lucknow, Hero Plots Lucknow, Hero Realty Lucknow, Plots on Kanpur Road Lucknow, Residential plots in Lucknow, Gated township Lucknow, Hero Homes price list" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteConfig.siteUrl}/images/hero-slide-1.jpg`} />
+    <meta property="og:site_name" content="Hero Homes Lucknow" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${siteConfig.siteUrl}/images/hero-slide-1.jpg`} />
+
+    <!-- Performance & Font Optimization: Preconnect & Swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD Structured Data for High Google Ranking -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <style is:global>
+      :root {
+        --red: #c81429;
+        --red-deep: #a50e20;
+        --ink: #141414;
+        --ink-soft: #333333;
+        --cream: #F5F5F4;
+        --white: #FFFFFF;
+      }
+      body {
+        font-family: 'Work Sans', sans-serif;
+        color: var(--ink);
+        background-color: var(--cream);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3, h4, .serif-font {
+        font-family: 'Fraunces', Georgia, serif;
+      }
+      /* Custom Eyebrow Badge */
+      .eyebrow-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .eyebrow-badge::before {
+        content: "";
+        width: 26px;
+        height: 2px;
+        background-color: var(--red);
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F5F5F4] text-[#141414] antialiased overflow-x-hidden selection:bg-[#c81429] selection:text-white pb-14 md:pb-0">
+    <slot />
+  </body>
+</html>

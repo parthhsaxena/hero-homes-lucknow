@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileStickyBar from '../components/MobileStickyBar.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { siteConfig } from '../config/site';
+---
+
+<Layout 
+  title="Terms & Conditions | Hero Homes Lucknow"
+  description="Terms and conditions of use for Hero Homes Lucknow marketing portal."
+>
+  <Header />
+
+  <main class="py-16 sm:py-24 bg-white text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="border-b border-gray-200 pb-8 mb-8">
+        <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#141414] mb-3">
+          Terms & Conditions
+        </h1>
+        <p class="text-sm text-gray-500">
+          Last updated: January 2026
+        </p>
+      </div>
+
+      <div class="space-y-6 text-sm sm:text-base leading-relaxed text-gray-700">
+        <p>
+          Welcome to the promotional website for <strong>Hero Homes Lucknow</strong>. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions.
+        </p>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">1. Informational Purpose Only</h2>
+        <p>
+          The content displayed on this website — including text, brochures, specifications, layouts, prices, and artistic visuals — is for informational purposes only. It does not constitute an offer, invitation, or contract between you and the developer or marketing partner.
+        </p>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">2. Visual Representations</h2>
+        <p>
+          All photographs, computer renderings, walkthrough videos, and landscape previews are artistic impressions intended solely to present an illustrative visualization of the development. Actual site dimensions and features may vary during construction.
+        </p>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">3. Pricing & Availability</h2>
+        <p>
+          Plot availability, payment plans, and starting prices are subject to change without prior notice at the sole discretion of the developer. Definitive terms are provided exclusively upon formal booking and execution of the builder-buyer agreement.
+        </p>
+
+        <h2 class="font-serif text-xl font-bold text-[#141414] pt-4">4. RERA Compliance</h2>
+        <p>
+          Hero Homes Lucknow adheres to all applicable regulatory norms. Visitors are encouraged to verify project registrations directly on the official UP RERA portal (<a href={siteConfig.reraUrl} target="_blank" rel="noopener noreferrer" class="text-[#c81429] underline">www.up-rera.in</a>).
+        </p>
+
+        <div class="pt-8 border-t border-gray-200">
+          <a href="/" class="text-[#c81429] font-bold hover:underline flex items-center gap-2 text-sm uppercase tracking-wider">
+            ← Return to Homepage
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+  <MobileStickyBar />
+  <FloatingWhatsApp />
+</Layout>
